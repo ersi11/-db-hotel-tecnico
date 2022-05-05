@@ -1,0 +1,11 @@
+1. Somma i prezzi dei pagamenti raggruppandoli per status
+
+SELECT status, SUM(price) AS Totale 
+FROM pagamenti GROUP BY status 
+ORDER BY status;
+----------------------------------------------------------------
+2. Conta quante volte è stata prenotata ogni stanza
+
+SELECT stanza_id AS stanza, COUNT(*) AS numero_prenotazioni
+FROM prenotazioni
+GROUP BY stanza_id;

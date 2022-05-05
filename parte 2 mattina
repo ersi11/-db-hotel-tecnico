@@ -59,13 +59,26 @@ CREATE TABLE [dbo].[Pagamenti]
 )
 -----------------------------------------------------------------------------------------------------------------------
 
-Tabella 
+Tabella stanze_prenotazioni
 
+CREATE TABLE [dbo].[stanze_prenotazioni]
+(
+	[id_stanze] INT NOT NULL,
+    [id_pagamenti] INT NOT NULL, 
+    CONSTRAINT [FK_stanza_pagamenti_stanze] FOREIGN KEY ([id_stanze]) REFERENCES [stanze]([id]), 
+    CONSTRAINT [FK_stanze_pagamenti_pagamenti] FOREIGN KEY ([id_pagamenti]) REFERENCES [pagamenti]([id]) 
+)
 
+------------------------------------------------------------------------------------------------------------------
+tabella prenotazioni_ospiti
 
-
-
-
+CREATE TABLE [dbo].[prenotazioni_ospiti]
+(
+	[id_prenotazioni] INT NOT NULL, 
+    [id_ospiti] INT NOT NULL, 
+    CONSTRAINT [FK_prenotazioni_ospiti_ospiti] FOREIGN KEY ([id_ospiti]) REFERENCES [ospiti]([id]), 
+    CONSTRAINT [FK_prenotazioni_ospiti_prenotazioni] FOREIGN KEY ([id_prenotazioni]) REFERENCES [prenotazioni]([id]) 
+)
 
 
 

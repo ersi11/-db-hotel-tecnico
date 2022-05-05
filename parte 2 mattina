@@ -1,0 +1,49 @@
+Tabella Stanze
+
+CREATE TABLE [dbo].[stanze]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [numero_stanza] SMALLINT NOT NULL, 
+    [piano_hotel] VARCHAR(30) NOT NULL, 
+    [numero_letto] TINYINT NOT NULL
+)
+--------------------------------------------------
+
+Tabella Ospiti
+
+CREATE TABLE [dbo].[guests]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [nome_ospite] VARCHAR(30) NOT NULL, 
+    [cognome_ospite] VARCHAR(30) NOT NULL, 
+    [documento_riconoscimento] VARCHAR(30) NOT NULL, 
+    [data_nascita] DATE NOT NULL, 
+    [documento_numero] VARCHAR(30) NOT NULL
+)
+----------------------------------------------------
+
+Tabella Configurazioni
+
+CREATE TABLE [dbo].[Table]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [descrizione_configurazione] TEXT NOT NULL, 
+    [configurazione_titolo] VARCHAR(40) NOT NULL
+)
+
+---------------------------------------------------------------
+
+Tabella Prenotazioni
+
+
+
+
+
+
+
+
+
+
+
+
+

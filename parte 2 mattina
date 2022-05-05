@@ -35,7 +35,31 @@ CREATE TABLE [dbo].[Table]
 
 Tabella Prenotazioni
 
+CREATE TABLE [dbo].[Prenotazione]
+(
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [id_configurazioni] INT NOT NULL, 
+    [durata_prenotazione] TINYINT NOT NULL, 
+    [importo_totale] DECIMAL(6, 2) NOT NULL, 
+    [numero_prenotazione] INT NOT NULL, 
+    CONSTRAINT [FK_Prenotazioni_Confiigurazioni] FOREIGN KEY ([id_Configurazioni]) REFERENCES [Configurazioni]([id])
+)
+---------------------------------------------------------------------------------------------------------------------------------
 
+Tabella Pagamenti
+
+CREATE TABLE [dbo].[Pagamenti]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [id_prenotazioni] INT NOT NULL, 
+    [pagamento_status] VARCHAR(30) NOT NULL, 
+    [pagamento_metodo] VARCHAR(60) NOT NULL, 
+    CONSTRAINT [FK_Pagamenti_Prenotazioni] FOREIGN KEY ([id_Prenotazioni]) REFERENCES [Prenotazioni]([id])
+
+)
+-----------------------------------------------------------------------------------------------------------------------
+
+Tabella 
 
 
 
